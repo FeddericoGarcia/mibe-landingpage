@@ -1,11 +1,8 @@
 import * as React from 'react';
 import { alpha } from '@mui/material';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
-import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
-import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 
 export default function Hero() {
@@ -39,60 +36,51 @@ export default function Hero() {
               flexDirection: { xs: 'column', md: 'row' },
               alignSelf: 'center',
               textAlign: 'center',
-              fontSize: 'clamp(3.5rem, 10vw, 4rem)',
+              fontSize: 'clamp(3rem, 10vw, 4rem)',
             }}
           >
-            Our latest&nbsp;
             <Typography
               component="span"
               variant="h1"
               sx={{
                 fontSize: 'clamp(3rem, 10vw, 4rem)',
+                mr: '10px',
                 color: (theme) =>
                   theme.palette.mode === 'light' ? 'primary.main' : 'primary.light',
               }}
             >
-              products
+              Armoniza
             </Typography>
+            cuerpo y espíritu
           </Typography>
           <Typography
             textAlign="center"
             color="text.secondary"
+            variant="subtitle1"
             sx={{ alignSelf: 'center', width: { sm: '100%', md: '80%' } }}
           >
-            Explore our cutting-edge dashboard, delivering high-quality solutions
-            tailored to your needs. Elevate your experience with top-tier features
-            and services.
-          </Typography>
-          <Stack
-            direction={{ xs: 'column', sm: 'row' }}
-            alignSelf="center"
-            spacing={1}
-            useFlexGap
-            sx={{ pt: 2, width: { xs: '100%', sm: 'auto' } }}
-          >
-            <TextField
-              id="outlined-basic"
-              hiddenLabel
-              size="small"
-              variant="outlined"
-              aria-label="Enter your email address"
-              placeholder="Your email address"
-              inputProps={{
-                autoComplete: 'off',
-                'aria-label': 'Enter your email address',
+            Explorá el poder transformador del&nbsp;
+            <Typography
+              component="span"
+              variant="subtitle1"
+              sx={{
+                color: (theme) =>
+                  theme.palette.mode === 'light' ? 'primary.main' : 'primary.light',
               }}
-            />
-            <Button variant="contained" color="primary">
-              Start now
-            </Button>
-          </Stack>
-          <Typography variant="caption" textAlign="center" sx={{ opacity: 0.8 }}>
-            By clicking &quot;Start now&quot; you agree to our&nbsp;
-            <Link href="#" color="primary">
-              Terms & Conditions
-            </Link>
-            .
+            >
+              Tai-Chi&nbsp;
+            </Typography>
+            y el&nbsp;
+            <Typography
+              component="span"
+              variant="subtitle1"
+              sx={{
+                color: (theme) =>
+                  theme.palette.mode === 'light' ? 'primary.main' : 'primary.light',
+              }}
+            >
+              Chi-Kung
+            </Typography>
           </Typography>
         </Stack>
         <Box
@@ -104,8 +92,8 @@ export default function Hero() {
             width: '100%',
             backgroundImage:
               theme.palette.mode === 'light'
-                ? 'url("/static/images/templates/templates-images/hero-light.png")'
-                : 'url("/static/images/templates/templates-images/hero-dark.png")',
+                ? 'url("../../img/favicon.ico")'
+                : 'url("../../img/bg-photo-Daniel-J-Schwarz.avif")',
             backgroundSize: 'cover',
             borderRadius: '10px',
             outline: '1px solid',
