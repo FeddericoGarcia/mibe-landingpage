@@ -44,12 +44,11 @@ export default function Hero() {
               variant="h1"
               sx={{
                 fontSize: 'clamp(3rem, 10vw, 4rem)',
-                mr: '10px',
                 color: (theme) =>
                   theme.palette.mode === 'light' ? 'primary.main' : 'primary.light',
               }}
             >
-              Armoniza
+              Armoniza&nbsp;
             </Typography>
             cuerpo y espíritu
           </Typography>
