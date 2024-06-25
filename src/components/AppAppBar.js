@@ -15,12 +15,19 @@ import ToggleColorMode from './ToggleColorMode';
 import SelfImprovementIcon from '@mui/icons-material/SelfImprovement';
 
 //TODO: ENLAZAR LAS URL DE LAS SECTION-ID CUANDO SE TERMINEN
-//TODO: VERIFICAR TRANSICION DEL TEMA-COLOR EN EL SVG DEL NAVBAR
 
 const logoStyle = {
-  width: '295px',
+  width: '250px',
   height: 'auto',
   cursor: 'pointer',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  flex: 'no-wrap',
+  '-webkit-user-select': 'none',
+  '-moz-user-select': 'none',
+  '-ms-user-select': 'none',
+  userSelect: 'none',
 };
 
 function AppAppBar({ mode, toggleColorMode }) {
@@ -78,28 +85,35 @@ function AppAppBar({ mode, toggleColorMode }) {
                   : '0 0 1px rgba(2, 31, 59, 0.7), 1px 1.5px 2px -1px rgba(2, 31, 59, 0.65), 4px 4px 12px -2.5px rgba(2, 31, 59, 0.65)',
             })}
           >
+            <Box style={logoStyle}> 
+            < SelfImprovementIcon  sx={{ fontSize: '40px', ml: 2, mr: 2, color:"text.primary" ? "text.primary" : "text.secondary.dark" }} />
+              <Typography variant="h6" color="text.primary" sx={{
+                  fontFamily: 'Playwrite NZ',
+                  fontOpticalSizing: 'auto',
+                  fontWeight: '600',
+                  fontStyle: 'normal',
+                  // textShadow: '1px 1px 3px #0959AA99'
+              }} >
+                Miriam Bengolea
+              </Typography>
+            </Box>
+
             <Box
               sx={{
                 flexGrow: 1,
                 display: 'flex',
                 alignItems: 'center',
+                justifyContent: 'flex-end',
                 ml: '-18px',
-                px: 0,
+                px: '20px',
               }}
             >
-              < SelfImprovementIcon  sx={{ ml: 2, mr: 2 }} color="text.primary" />
-              <Box style={logoStyle}> 
-                <Typography variant="h6" color="text.primary" >
-                  Miriam Bengolea
-                </Typography>
-              </Box>
-
-              <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+              <Box sx={{ display: { xs: 'none', md: 'flex' }}}>
                 <MenuItem
                   onClick={() => scrollToSection('taichi')}
-                  sx={{ py: '6px', px: '12px' }}
+                  sx={{ py: '6px',px: '12px'}}
                 >
-                  <Typography variant="body2" color="text.primary">
+                  <Typography variant="body2" color="text.primary" id='typograMontserrat'>
                     Tai-chi
                   </Typography>
                 </MenuItem>
@@ -107,7 +121,7 @@ function AppAppBar({ mode, toggleColorMode }) {
                   onClick={() => scrollToSection('chikung')}
                   sx={{ py: '6px', px: '12px' }}
                 >
-                  <Typography variant="body2" color="text.primary">
+                  <Typography variant="body2" color="text.primary" id='typograMontserrat'>
                     Chi-kung
                   </Typography>
                 </MenuItem>
@@ -115,7 +129,7 @@ function AppAppBar({ mode, toggleColorMode }) {
                   onClick={() => scrollToSection('testimonials')}
                   sx={{ py: '6px', px: '12px' }}
                 >
-                  <Typography variant="body2" color="text.primary">
+                  <Typography variant="body2" color="text.primary" id='typograMontserrat'>
                   Testimonios
                   </Typography>
                 </MenuItem>
@@ -123,7 +137,7 @@ function AppAppBar({ mode, toggleColorMode }) {
                   onClick={() => scrollToSection('quien-soy')}
                   sx={{ py: '6px', px: '12px' }}
                 >
-                  <Typography variant="body2" color="text.primary">
+                  <Typography variant="body2" color="text.primary" id='typograMontserrat'>
                     ¿Quien soy?
                   </Typography>
                 </MenuItem>
@@ -131,7 +145,7 @@ function AppAppBar({ mode, toggleColorMode }) {
                   onClick={() => scrollToSection('contacto')}
                   sx={{ py: '6px', px: '12px' }}
                 >
-                  <Typography variant="body2" color="text.primary">
+                  <Typography variant="body2" color="text.primary" id='typograMontserrat'>
                     Contactame
                   </Typography>
                 </MenuItem>
@@ -175,19 +189,19 @@ function AppAppBar({ mode, toggleColorMode }) {
                   >
                     <ToggleColorMode mode={mode} toggleColorMode={toggleColorMode} />
                   </Box>
-                  <MenuItem onClick={() => scrollToSection('taichi')}>
+                  <MenuItem onClick={() => scrollToSection('taichi')} id='typograMontserrat'>
                     Tai-chi
                   </MenuItem>
-                  <MenuItem onClick={() => scrollToSection('chikung')}>
+                  <MenuItem onClick={() => scrollToSection('chikung')} id='typograMontserrat'>
                     Chi-kung
                   </MenuItem>
-                  <MenuItem onClick={() => scrollToSection('testimonials')}>
+                  <MenuItem onClick={() => scrollToSection('testimonials')} id='typograMontserrat'>
                     Testimonios
                   </MenuItem>
-                  <MenuItem onClick={() => scrollToSection('quien-soy')}>
+                  <MenuItem onClick={() => scrollToSection('quien-soy')} id='typograMontserrat'>
                   ¿Quien soy?
                   </MenuItem>
-                  <MenuItem onClick={() => scrollToSection('contacto')}>
+                  <MenuItem onClick={() => scrollToSection('contacto')} id='typograMontserrat'>
                   Contactame
                   </MenuItem>
                   <Divider />
