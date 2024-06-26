@@ -5,6 +5,8 @@ import Container from '@mui/material/Container';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 
+//TODO: TERMINAR FOTO HERO SEGUN TEMA
+
 export default function Hero() {
   return (
     <Box
@@ -28,12 +30,12 @@ export default function Hero() {
           pb: { xs: 8, sm: 12 },
         }}
       >
-        <Stack spacing={2} useFlexGap sx={{ width: { xs: '100%', sm: '70%' } }}>
+        <Stack spacing={1} useFlexGap sx={{ width: { xs: '100%', sm: '70%' } }}>
           <Typography
             variant="h1"
             sx={{
               display: 'flex',
-              flexDirection: { xs: 'column', md: 'row' },
+              flexDirection: {xs: 'column', sm: 'column', md: 'column', lg: 'row'},
               alignSelf: 'center',
               textAlign: 'center',
               fontSize: 'clamp(3rem, 10vw, 4rem)',
@@ -58,7 +60,7 @@ export default function Hero() {
             variant="subtitle1"
             sx={{ alignSelf: 'center', width: { sm: '100%', md: '80%' } }}
           >
-            Explorá el poder transformador del&nbsp;
+            Encuentra tu&nbsp;
             <Typography
               component="span"
               variant="subtitle1"
@@ -67,9 +69,9 @@ export default function Hero() {
                   theme.palette.mode === 'light' ? 'primary.main' : 'primary.light',
               }}
             >
-              Tai-Chi&nbsp;
+              equilibrio interior&nbsp;
             </Typography>
-            y el&nbsp;
+            y conecta con&nbsp;
             <Typography
               component="span"
               variant="subtitle1"
@@ -78,7 +80,13 @@ export default function Hero() {
                   theme.palette.mode === 'light' ? 'primary.main' : 'primary.light',
               }}
             >
-              Chi-Kung
+              la paz
+            </Typography>
+            <Typography
+              variant="subtitle1"
+              fontWeight={600}
+              >
+              Prof. Miriam Bengolea
             </Typography>
           </Typography>
         </Stack>
@@ -89,10 +97,10 @@ export default function Hero() {
             alignSelf: 'center',
             height: { xs: 200, sm: 700 },
             width: '100%',
-            backgroundImage:
-              theme.palette.mode === 'light'
-                ? 'url("../../img/favicon.ico")'
-                : 'url("../../img/bg-photo-Daniel-J-Schwarz.avif")',
+            backgroundImage: "url(%PUBLIC_PATH%/../../../img/bground-hero-taichi.webp)",
+              // theme.palette.mode === 'light'
+              //   ? ( <img src="../../img/bground-hero-taichi.webp" alt="Light theme background" />)
+              //   : (<img src="../../img/bg-photo-Daniel-J-Schwarz.avif" alt="Dark theme background" />),
             backgroundSize: 'cover',
             borderRadius: '10px',
             outline: '1px solid',
