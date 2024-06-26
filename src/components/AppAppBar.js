@@ -24,9 +24,9 @@ const logoStyle = {
   alignItems: 'center',
   justifyContent: 'center',
   flex: 'no-wrap',
-  '-webkit-user-select': 'none',
-  '-moz-user-select': 'none',
-  '-ms-user-select': 'none',
+  WebkitUserSelect: 'none',
+  MozUserSelect: 'none',
+  msUserSelect: 'none',
   userSelect: 'none',
 };
 
@@ -85,14 +85,13 @@ function AppAppBar({ mode, toggleColorMode }) {
                   : '0 0 1px rgba(2, 31, 59, 0.7), 1px 1.5px 2px -1px rgba(2, 31, 59, 0.65), 4px 4px 12px -2.5px rgba(2, 31, 59, 0.65)',
             })}
           >
-            <Box style={logoStyle}> 
-            < SelfImprovementIcon  sx={{ fontSize: '40px', ml: 2, mr: 2, color:"text.primary" ? "text.primary" : "text.secondary.dark" }} />
+            <Box style={logoStyle} onClick={() => scrollToSection('hero')}> 
+            < SelfImprovementIcon  sx={{ fontSize: '40px', mr: 2, color:"text.primary" ? "text.primary" : "text.secondary.dark" }} />
               <Typography variant="h6" color="text.primary" sx={{
                   fontFamily: 'Playwrite NZ',
                   fontOpticalSizing: 'auto',
                   fontWeight: '600',
                   fontStyle: 'normal',
-                  // textShadow: '1px 1px 3px #0959AA99'
               }} >
                 Miriam Bengolea
               </Typography>
