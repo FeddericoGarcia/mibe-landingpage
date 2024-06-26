@@ -8,6 +8,7 @@ import AppAppBar from './components/AppAppBar';
 import Hero from './components/Hero';
 import Pricing from './components/Pricing';
 import Testimonials from './components/Testimonials';
+import PersonInformation from './components/PersonInformation';
 import Footer from './components/Footer';
 import getLPTheme from './getLPTheme';
 import Description from './components/Description';
@@ -30,6 +31,7 @@ export default function LandingPage() {
         <Description />
         <Testimonials />
         <Divider />
+        <PersonInformation />
         <Pricing />
         <Divider />
         <Footer />

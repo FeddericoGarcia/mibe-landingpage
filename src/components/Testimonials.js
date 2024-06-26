@@ -1,13 +1,16 @@
 import * as React from 'react';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
 import CardContent from '@mui/material/CardContent';
-import Avatar from '@mui/material/Avatar';
+// // import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
-import Grid from '@mui/material/Grid';
-import { useTheme } from '@mui/system';
+// import Grid from '@mui/material/Grid';
+// // import { useTheme } from '@mui/system';
 
 const userTestimonials = [
   {
@@ -23,12 +26,29 @@ const userTestimonials = [
       "Las clases de Tai Chi han cambiado las reglas del juego para mí. He notado mejoras en mi equilibrio, flexibilidad y bienestar general. Además, el ambiente tranquilo hace que sea fácil relajarse después de un largo día",
   },
   {
-    name: 'Cindy Baker',
+    name: 'Cindy A.',
     occupation: 'Alumna',
     testimonial:
       'El Tai Chi me ha ayudado a encontrar la armonía y el equilibrio interior. La orientación y la experiencia de la profesora Miriam crean una atmósfera enriquecedora, haciendo de cada clase una experiencia única y enriquecedora',
   },
+  {
+    name: 'Hernan Almiron',
+    occupation: 'Alumno',
+    testimonial:
+    'No puedo explicar lo bien que me ha realizado tomar las clases con la Prof. Miriam, la explicación que imparte es muy recomendada, es un cambio total para mi vida'
+  },
 ];
+
+const settingsSlider = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 2000,
+  gap: 40
+};
 
 export default function Testimonials() {
   return (
@@ -37,11 +57,10 @@ export default function Testimonials() {
       sx={{
         pt: { xs: 4, sm: 12 },
         pb: { xs: 8, sm: 16 },
-        position: 'relative',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        gap: { xs: 3, sm: 6 },
+        // position: 'relative',
+        // display: 'flex',
+        // flexDirection: 'column',
+        // alignItems: 'center',
       }}
     >
       <Box
@@ -50,13 +69,13 @@ export default function Testimonials() {
           textAlign: { sm: 'left', md: 'center' },
         }}
       >
-        <Typography component="h2" variant="h4" color="text.primary">
+        <Typography component="h2" variant="h4" color="text.primary" id="typograMontserrat">
           Testimonios
         </Typography>
       </Box>
-      <Grid container spacing={2}>
+      <Slider {...settingsSlider} >
         {userTestimonials.map((testimonial, index) => (
-          <Grid item xs={12} sm={6} md={4} key={index} sx={{ display: 'flex' }}>
+          // <Grid item xs={12} sm={6} md={4} key={index} sx={{ display: 'flex' }}>
             <Card
               sx={{
                 display: 'flex',
@@ -85,9 +104,35 @@ export default function Testimonials() {
                 />
               </Box>
             </Card>
-          </Grid>
+          // </Grid>
         ))}
-      </Grid>
+      </Slider >
     </Container>
   );
 }
+
+
+
+// const TestimonialCarousel = () => {
+//   const settings = {
+//     dots: true,
+//     infinite: true,
+//     speed: 500,
+//     slidesToShow: 1,
+//     slidesToScroll: 1,
+//     autoplay: true,
+//     autoplaySpeed: 2000,
+//   };
+
+//   return (
+//     <Slider {...settingsSlider}>
+//       {userTestimonials.map((testimonial) => (
+//         <div key={testimonial.id}>
+//           <p>{testimonial.content}</p>
+//         </div>
+//       ))}
+//     </Slider>
+//   );
+// };
+
+// export default TestimonialCarousel;

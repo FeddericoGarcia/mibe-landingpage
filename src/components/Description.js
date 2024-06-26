@@ -5,6 +5,9 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 
+// import FilterVintageRoundedIcon from '@mui/icons-material/FilterVintageRounded';
+import SportsMartialArtsRoundedIcon from '@mui/icons-material/SportsMartialArtsRounded';
+import SelfImprovementRoundedIcon from '@mui/icons-material/SelfImprovementRounded';
 //TODO: AGREGAR SVG AL COSTADO DEL TEXTO
 
 export default function Description() {
@@ -17,7 +20,8 @@ export default function Description() {
                 flexDirection: "column",
                 justifyContent: 'center',
                 alignItems: "flex-start",
-                textAlign: "left"
+                textAlign: "left",
+                position: 'relative'
             }}>
                 <Typography
                     id="typograMontserrat"
@@ -38,6 +42,17 @@ export default function Description() {
                 y la fuerza muscular, también tiene beneficios para reducir el estrés, lo que lo convierte 
                 en una práctica popular para la salud y el bienestar general.
                 </Typography>
+                <SportsMartialArtsRoundedIcon sx={{
+                    position: 'absolute',
+                    right: 0,
+                    top: 0,
+                    color: (theme) =>
+                        theme.palette.mode === 'light' ? 'primary.main' : 'primary.light',
+                    fontSize: '20rem',
+                    mb: 3,
+                    mt: 3,
+                    mr: 3,
+                }}/>
             </Box>
             <Divider/>
             <Box id="chikung" height={450} sx={{
@@ -45,7 +60,8 @@ export default function Description() {
                 flexDirection: "column",
                 justifyContent: 'center',
                 alignItems: "flex-end",
-                textAlign: "right"
+                textAlign: "right",
+                position: 'relative'
             }}>
                 <Typography
                     id="typograMontserrat"
@@ -65,6 +81,17 @@ export default function Description() {
                 físicos para potenciar y equilibrar el flujo de Chi (<i>energía vital</i>) en el cuerpo, promoviendo la salud, 
                 la tranquilidad y la longevidad.
                 </Typography>
+                <SelfImprovementRoundedIcon sx={{
+                    position: 'absolute',
+                    left: 0,
+                    top: 0,
+                    color: (theme) =>
+                        theme.palette.mode === 'light' ? 'primary.main' : 'primary.light',
+                    fontSize: '20rem',
+                    mb: 3,
+                    mt: 3,
+                    ml: 3,
+                }}/>
             </Box>
           </Stack>
         </Container>
