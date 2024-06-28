@@ -5,14 +5,12 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 
-// import FilterVintageRoundedIcon from '@mui/icons-material/FilterVintageRounded';
 import SportsMartialArtsRoundedIcon from '@mui/icons-material/SportsMartialArtsRounded';
-import SelfImprovementRoundedIcon from '@mui/icons-material/SelfImprovementRounded';
-//TODO: AGREGAR SVG AL COSTADO DEL TEXTO
+import SportsGymnasticsRoundedIcon from '@mui/icons-material/SportsGymnasticsRounded';
 
 export default function Description() {
   return (
-    <Box >
+    <Box pb={"4em"}>
         <Container maxWidth="md">
           <Stack spacing={4}>
             <Box id="taichi" height={450} sx={{
@@ -71,28 +69,36 @@ export default function Description() {
                     sx={{
                         color: (theme) =>
                         theme.palette.mode === 'light' ? 'primary.main' : 'primary.light',
+                    
                     }}
                     >
                 Chi Kung
                 </Typography>
-                <Typography variant="body1" fontSize="1rem" sx={{ mb: 3, width: '50%'}}>
-                También conocido como <b>Qigong</b>, es un sistema chino de ejercicios de meditación, respiración y movimiento. 
+                <Typography variant="body1" fontSize="1rem" sx={{ mb: 5, width: '50%'}}>
+                También conocido como <b>Qigong</b>, es un sistema chino de ejercicios de meditación, respiración y movimientos. 
                 Es una práctica que implica la coordinación de diferentes patrones de respiración con posturas y movimientos 
                 físicos para potenciar y equilibrar el flujo de Chi (<i>energía vital</i>) en el cuerpo, promoviendo la salud, 
                 la tranquilidad y la longevidad.
                 </Typography>
-                <SelfImprovementRoundedIcon sx={{
-                    position: 'absolute',
-                    left: 0,
-                    top: 0,
-                    color: (theme) =>
-                        theme.palette.mode === 'light' ? 'primary.main' : 'primary.light',
-                    fontSize: '20rem',
-                    mb: 3,
-                    mt: 3,
-                    ml: 3,
-                }}/>
+                <Box sx={{
+                    filter: {dropShadow: (theme) =>
+                        theme.palette.mode === 'light' ? '0px 3px 3px -2px rgba(0, 0, 0, 0.2)' : '0px 3px 3px -2px rgba(9, 9, 9, 0.2)'},
+                }}>
+                    <SportsGymnasticsRoundedIcon sx={{
+                        position: 'absolute',
+                        left: 0,
+                        top: 0,
+                        color: (theme) =>
+                            theme.palette.mode === 'light' ? 'primary.main' : 'primary.light',
+                        filter: "drop-shadows 0px 3px 3px -2px rgba(0, 0, 0, 0.2)",
+                        fontSize: '20rem',
+                        mb: 3,
+                        mt: 3,
+                        ml: 3,
+                    }}/>
+                </Box>
             </Box>
+            <Divider/>
           </Stack>
         </Container>
     </Box>

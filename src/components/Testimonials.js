@@ -1,16 +1,17 @@
 import * as React from 'react';
+
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
 import CardContent from '@mui/material/CardContent';
-// // import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
-// import Grid from '@mui/material/Grid';
-// // import { useTheme } from '@mui/system';
+import Grid from '@mui/material/Grid';
+
 
 const userTestimonials = [
   {
@@ -32,7 +33,7 @@ const userTestimonials = [
       'El Tai Chi me ha ayudado a encontrar la armonía y el equilibrio interior. La orientación y la experiencia de la profesora Miriam crean una atmósfera enriquecedora, haciendo de cada clase una experiencia única y enriquecedora',
   },
   {
-    name: 'Hernan Almiron',
+    name: 'Hernan Rodriguez',
     occupation: 'Alumno',
     testimonial:
     'No puedo explicar lo bien que me ha realizado tomar las clases con la Prof. Miriam, la explicación que imparte es muy recomendada, es un cambio total para mi vida'
@@ -42,12 +43,11 @@ const userTestimonials = [
 const settingsSlider = {
   dots: true,
   infinite: true,
-  speed: 500,
-  slidesToShow: 1,
+  speed: 10000,
+  slidesToShow: 2,
   slidesToScroll: 1,
   autoplay: true,
-  autoplaySpeed: 2000,
-  gap: 40
+  autoplaySpeed: 100,
 };
 
 export default function Testimonials() {
@@ -55,18 +55,14 @@ export default function Testimonials() {
     <Container
       id="testimonials"
       sx={{
-        pt: { xs: 4, sm: 12 },
         pb: { xs: 8, sm: 16 },
-        // position: 'relative',
-        // display: 'flex',
-        // flexDirection: 'column',
-        // alignItems: 'center',
       }}
     >
       <Box
         sx={{
-          width: { sm: '100%', md: '60%' },
-          textAlign: { sm: 'left', md: 'center' },
+          textAlign: 'center',
+          pb: "3rem",
+          pt: "2rem"
         }}
       >
         <Typography component="h2" variant="h4" color="text.primary" id="typograMontserrat">
@@ -75,18 +71,25 @@ export default function Testimonials() {
       </Box>
       <Slider {...settingsSlider} >
         {userTestimonials.map((testimonial, index) => (
-          // <Grid item xs={12} sm={6} md={4} key={index} sx={{ display: 'flex' }}>
+          <Grid item xs={12} sm={6} md={4} key={index} sx={{ display: 'flex' }}>
             <Card
               sx={{
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
                 flexGrow: 1,
-                p: 1,
+                m: "2.5em",
+                p: "2em"                
               }}
             >
               <CardContent>
-                <Typography variant="body2" color="text.secondary">
+                <Typography variant="body2" color="text.secondary" sx={{
+                  lineHeight: 2,
+                  textAlign: 'center',
+                  fontSize: 16,
+                  fontWeight: 400,
+                  letterSpacing: '-0.02em',
+                }}>
                   {testimonial.testimonial}
                 </Typography>
               </CardContent>
@@ -104,35 +107,9 @@ export default function Testimonials() {
                 />
               </Box>
             </Card>
-          // </Grid>
+          </Grid>
         ))}
       </Slider >
     </Container>
   );
 }
-
-
-
-// const TestimonialCarousel = () => {
-//   const settings = {
-//     dots: true,
-//     infinite: true,
-//     speed: 500,
-//     slidesToShow: 1,
-//     slidesToScroll: 1,
-//     autoplay: true,
-//     autoplaySpeed: 2000,
-//   };
-
-//   return (
-//     <Slider {...settingsSlider}>
-//       {userTestimonials.map((testimonial) => (
-//         <div key={testimonial.id}>
-//           <p>{testimonial.content}</p>
-//         </div>
-//       ))}
-//     </Slider>
-//   );
-// };
-
-// export default TestimonialCarousel;

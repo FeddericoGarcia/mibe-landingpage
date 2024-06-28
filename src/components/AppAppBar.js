@@ -145,7 +145,7 @@ function AppAppBar({ mode, toggleColorMode }) {
                   sx={{ py: '6px', px: '12px' }}
                 >
                   <Typography variant="body2" color="text.primary" id='typograMontserrat'>
-                    Contactame
+                    Contáctame
                   </Typography>
                 </MenuItem>
               </Box>
@@ -201,7 +201,7 @@ function AppAppBar({ mode, toggleColorMode }) {
                   ¿Quien soy?
                   </MenuItem>
                   <MenuItem onClick={() => scrollToSection('contacto')} id='typograMontserrat'>
-                  Contactame
+                  Contáctame
                   </MenuItem>
                   <Divider />
                 </Box>
