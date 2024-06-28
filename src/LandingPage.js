@@ -6,7 +6,7 @@ import Divider from '@mui/material/Divider';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import AppAppBar from './components/AppAppBar';
 import Hero from './components/Hero';
-import Pricing from './components/Pricing';
+import Contact from './components/Contact';
 import Testimonials from './components/Testimonials';
 import PersonInformation from './components/PersonInformation';
 import Footer from './components/Footer';
@@ -32,8 +32,7 @@ export default function LandingPage() {
         <Testimonials />
         <Divider />
         <PersonInformation />
-        <Pricing />
-        <Divider />
+        <Contact />
         <Footer />
       </Box>
     </ThemeProvider>
