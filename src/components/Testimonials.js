@@ -44,7 +44,7 @@ const settingsSlider = {
   dots: true,
   infinite: true,
   speed: 10000,
-  slidesToShow: 2,
+  slidesToShow: 1,
   slidesToScroll: 1,
   autoplay: true,
   autoplaySpeed: 100,
@@ -56,6 +56,8 @@ export default function Testimonials() {
       id="testimonials"
       sx={{
         pb: { xs: 8, sm: 16 },
+        mt: { xs: 8, sm: 16 },
+        mb: { xs: 8, sm: 16 },
       }}
     >
       <Box
@@ -78,7 +80,7 @@ export default function Testimonials() {
                 flexDirection: 'column',
                 justifyContent: 'space-between',
                 flexGrow: 1,
-                m: "2.5em",
+                m: "5em",
                 p: "2em"                
               }}
             >
@@ -86,7 +88,7 @@ export default function Testimonials() {
                 <Typography variant="body2" color="text.secondary" sx={{
                   lineHeight: 2,
                   textAlign: 'center',
-                  fontSize: 16,
+                  fontSize: 18,
                   fontWeight: 400,
                   letterSpacing: '-0.02em',
                 }}>

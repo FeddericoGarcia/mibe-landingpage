@@ -188,6 +188,7 @@ function AppAppBar({ mode, toggleColorMode }) {
                   >
                     <ToggleColorMode mode={mode} toggleColorMode={toggleColorMode} />
                   </Box>
+                  <Divider />
                   <MenuItem onClick={() => scrollToSection('taichi')} id='typograMontserrat'>
                     Tai-chi
                   </MenuItem>
@@ -203,7 +204,6 @@ function AppAppBar({ mode, toggleColorMode }) {
                   <MenuItem onClick={() => scrollToSection('contacto')} id='typograMontserrat'>
                   Contáctame
                   </MenuItem>
-                  <Divider />
                 </Box>
               </Drawer>
             </Box>
