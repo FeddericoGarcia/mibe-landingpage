@@ -12,14 +12,16 @@ export default function Description() {
   return (
     <Box pb={"4em"}>
         <Container maxWidth="md">
-          <Stack spacing={4}>
-            <Box id="taichi" height={450} sx={{
+          <Stack spacing={12}>
+            <Box id="taichi" minHeight={370} sx={{
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: 'center',
                 alignItems: "flex-start",
                 textAlign: "left",
-                position: 'relative'
+                position: 'relative',
+                p: { xs:8, md:12 },
+                marginBottom: { xs:"25em", sm:15, md:100 }
             }}>
                 <Typography
                     id="typograMontserrat"
@@ -34,7 +36,7 @@ export default function Description() {
                 Tai Chi
                 </Typography>
                 
-                <Typography variant="body1" fontSize="1rem" sx={{ mb: 3, width: '50%' }}>
+                <Typography variant="body1" fontSize="1rem" sx={{ mb: 3, width: '50%', zIndex: 1 }}>
                 Es un arte marcial chino conocido por sus movimientos lentos y elegantes que promueven la serenidad, 
                 la concentración y la paz interior. Es una forma de ejercicio que mejora el equilibrio, la flexibilidad 
                 y la fuerza muscular, también tiene beneficios para reducir el estrés, lo que lo convierte 
@@ -43,23 +45,26 @@ export default function Description() {
                 <SportsMartialArtsRoundedIcon sx={{
                     position: 'absolute',
                     right: 0,
-                    top: 0,
+                    top: 70,
                     color: (theme) =>
                         theme.palette.mode === 'light' ? 'primary.main' : 'primary.light',
-                    fontSize: '20rem',
+                    fontSize: {xs:'12em', sm:'19em', md:'22em', lg:'25em'},
+                    filter: (theme) =>
+                            theme.palette.mode === 'light' ? "drop-shadow(10px 5px 5px #0009)" : "drop-shadow(10px 5px 5px #CCC9)",
                     mb: 3,
-                    mt: 3,
-                    mr: 3,
+                    mt: {xs:20, sm:15, md: 3},
+                    mr: {xs:0, sm:-3, md: 3},
                 }}/>
             </Box>
-            <Divider/>
-            <Box id="chikung" height={450} sx={{
+            <Box id="chikung" sx={{
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: 'center',
                 alignItems: "flex-end",
                 textAlign: "right",
-                position: 'relative'
+                position: 'relative',
+                p: { xs:8, sm:10, md:12 },
+                // m: { xs:8, sm:10, md:12 }
             }}>
                 <Typography
                     id="typograMontserrat"
@@ -74,27 +79,26 @@ export default function Description() {
                     >
                 Chi Kung
                 </Typography>
-                <Typography variant="body1" fontSize="1rem" sx={{ mb: 5, width: '50%'}}>
+                <Typography variant="body1" fontSize="1rem" sx={{ mb: 5, width: '50%', zIndex: 1}}>
                 También conocido como <b>Qigong</b>, es un sistema chino de ejercicios de meditación, respiración y movimientos. 
                 Es una práctica que implica la coordinación de diferentes patrones de respiración con posturas y movimientos 
                 físicos para potenciar y equilibrar el flujo de Chi (<i>energía vital</i>) en el cuerpo, promoviendo la salud, 
                 la tranquilidad y la longevidad.
                 </Typography>
                 <Box sx={{
-                    filter: {dropShadow: (theme) =>
-                        theme.palette.mode === 'light' ? '0px 3px 3px -2px rgba(0, 0, 0, 0.2)' : '0px 3px 3px -2px rgba(9, 9, 9, 0.2)'},
                 }}>
                     <SportsGymnasticsRoundedIcon sx={{
                         position: 'absolute',
                         left: 0,
-                        top: 0,
+                        top: 70,
                         color: (theme) =>
                             theme.palette.mode === 'light' ? 'primary.main' : 'primary.light',
-                        filter: "drop-shadows 0px 3px 3px -2px rgba(0, 0, 0, 0.2)",
-                        fontSize: '20rem',
+                        fontSize: {xs:'12em', sm:'19em', md:'22em', lg:'25em'},
+                        filter: (theme) =>
+                            theme.palette.mode === 'light' ? "drop-shadow(10px 5px 5px #0009)" : "drop-shadow(10px 5px 5px #CCC9)",
                         mb: 3,
-                        mt: 3,
-                        ml: 3,
+                        mt: {xs:20, sm:15, md: 3},
+                        ml: {xs:0, sm:-2, md: 3},
                     }}/>
                 </Box>
             </Box>

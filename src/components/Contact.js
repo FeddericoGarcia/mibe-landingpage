@@ -9,25 +9,26 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
+import { alpha } from '@mui/material';
 
 export default function Contact() {
   return (
     <Container
       id="contacto"
       sx={{
-        // pt: { xs: 4, sm: 12 },
-        pb: { xs: 8, sm: 16 },
         position: 'relative',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         gap: { xs: 3, sm: 6 },
+        mt: '7em'
       }}
     >
       <Box
         sx={{
-          width: { sm: '100%', md: '60%' },
-          textAlign: { sm: 'left', md: 'center' },
+          width: { xs:'75%', sm: '80%'},
+          textAlign: 'center' ,
+          pb: '1em'
         }}
       >
         <Typography
@@ -51,7 +52,8 @@ export default function Contact() {
           <Grid
             item
             xs={12}
-            md={4}
+            sm={8}
+            md={5}
           >
             <Card
               sx={{
@@ -59,9 +61,15 @@ export default function Contact() {
                 display: 'flex',
                 flexDirection: 'column',
                 gap: 4,
-                border: '1px solid',
-                borderColor:'primary.main',
-                // background: 'linear-gradient(#033363, #021F3B)'
+                outline: '1px solid',
+                outlineColor: (theme) =>
+                  theme.palette.mode === 'light'
+                    ? alpha('#BFCCD9', 0.5)
+                    : alpha('#9CCCFC', 0.1),
+                boxShadow: (theme) =>
+                  theme.palette.mode === 'light'
+                    ? `0 0 12px 8px ${alpha('#9CCCFC', 0.2)}`
+                    : `0 0 24px 12px ${alpha('#033363', 0.2)}`,
               }}
             >
               <CardContent>
@@ -82,9 +90,10 @@ export default function Contact() {
                 >
                     {/* TODO: AJUSTAR ESTILOS DEL LABEL AL CLICKEAR */}
 
-                  <TextField id="name" label="Nombre completo" variant="outlined" sx={{color: "FFF"}}/>
+                  <TextField id="name" label="Nombre completo" variant="outlined"/>
                   <TextField id="telephone" label="Teléfono" variant="outlined" />
                   <TextField id="email" label="Correo electrónico" variant="outlined" />
+                  <TextField id="text" placeholder="Hola, quisiera más información sobre tus clases..." variant="outlined" multiline rows={4} />
 
                 </Box>
               </CardContent>
@@ -93,10 +102,13 @@ export default function Contact() {
                   fullWidth
                   variant="contained"
                   component="a"
-                  href="/material-ui/getting-started/templates/checkout/"
+                  href="#"
                   target="__blank"
+                  sx={{
+                    letterSpacing: '.2em',
+                  }}
                 >
-                  Enviar
+                  {'Enviar'.toUpperCase()}
                 </Button>
               </CardActions>
             </Card>
