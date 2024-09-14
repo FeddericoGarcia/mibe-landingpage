@@ -7,6 +7,14 @@ import Typography from '@mui/material/Typography';
 
 //TODO: TERMINAR FOTO HERO SEGUN TEMA
 
+// const fetchImg = ( theme ) =>{
+//   if(theme.palette.mode === 'light') {
+//     'url("https://res.cloudinary.com/dipoe9wir/image/upload/v1726269701/personas-taichi-ocaso_xctl7z.webp")'
+//   } else { 
+//     'url("https://res.cloudinary.com/dipoe9wir/image/upload/v1726269701/personas-taichi-bosque_kbkzcu.webp")'
+//   }
+// }
+
 export default function Hero() {
   return (
     <Box
@@ -39,12 +47,14 @@ export default function Hero() {
               alignSelf: 'center',
               textAlign: 'center',
               fontSize: 'clamp(3rem, 10vw, 4rem)',
+              width: "110%",
             }}
           >
             <Typography
               component="span"
               variant="h1"
               sx={{
+                
                 fontSize: 'clamp(3rem, 10vw, 4rem)',
                 color: (theme) =>
                   theme.palette.mode === 'light' ? 'primary.main' : 'primary.light',
@@ -97,11 +107,12 @@ export default function Hero() {
             alignSelf: 'center',
             height: { xs: 200, sm: 700 },
             width: '100%',
-            backgroundImage: "url(%PUBLIC_PATH%/../../../img/bground-hero-taichi.webp)",
-              // theme.palette.mode === 'light'
-              //   ? ( <img src="../../img/bground-hero-taichi.webp" alt="Light theme background" />)
-              //   : (<img src="../../img/bg-photo-Daniel-J-Schwarz.avif" alt="Dark theme background" />),
+            background: 'url("https://res.cloudinary.com/dipoe9wir/image/upload/v1726269701/personas-taichi-ocaso_xctl7z.webp")',
             backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            opacity: 0.8,
+            transition: 'filter 0.3s ease',
             borderRadius: '10px',
             outline: '1px solid',
             outlineColor:

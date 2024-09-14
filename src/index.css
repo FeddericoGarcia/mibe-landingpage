@@ -7,14 +7,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.MuiTypography-root, .MuiBox-root, .MuiFormLabel-root, .MuiInputBase-input{
+  font-family: "Montserrat", sans-serif!important;
+  font-optical-sizing: auto;
 }
 
-#typograMontserrat{
-  font-family: "Montserrat", sans-serif;
+.typograhyPlaywrite{
+  font-family: "Playwrite NZ", sans-serif!important;
   font-optical-sizing: auto;
-  font-weight: 400;
+  font-weight: 600;
   font-style: normal;
 }

@@ -20,15 +20,15 @@ export default function PersonInformation() {
                 position: 'relative'
             }}>
                 <Typography
-                    id="typograMontserrat"
+                    className="typograhyPlaywrite"
                     component="h2"
                     variant="h2"
-                    mb="1rem"
+                    mb="2rem"
                     sx={{
-                        color: (theme) =>
-                        theme.palette.mode === 'light' ? 'primary.main' : 'primary.light',
+                      color: (theme) =>
+                        theme.palette.mode === "light" ? "primary.main" : "primary.light",
                     }}
-                    >
+                  >
                 ¿ Quien Soy?
                 </Typography>
                 

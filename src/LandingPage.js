@@ -30,7 +30,7 @@ export default function LandingPage() {
       <Box sx={{ bgcolor: 'background.default' }}>
         <Description />
         <Testimonials />
-        <Divider />
+        {/* <Divider /> */}
         <PersonInformation />
         <Contact />
         <Footer />
