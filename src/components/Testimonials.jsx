@@ -11,6 +11,7 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
+import FormatQuoteRoundedIcon from '@mui/icons-material/FormatQuoteRounded';
 
 const userTestimonials = [
   {
@@ -46,7 +47,7 @@ const settingsSlider = {
   slidesToShow: 1,
   slidesToScroll: 1,
   autoplay: true,
-  autoplaySpeed: 100,
+  autoplaySpeed: 1000,
 };
 
 export default function Testimonials() {
@@ -56,7 +57,8 @@ export default function Testimonials() {
       sx={{
         heigth: "auto",
         width: "auto",
-        // marginBottom: "10rem"
+        overflow: "hidden",
+        mb: { xs: 4, sm: 6, md: 8 },
       }}
     >
       <Box
@@ -80,7 +82,7 @@ export default function Testimonials() {
         </Typography>
       </Box>
       <Box sx={{
-        heigth: "100vh",
+        height: "auto",
         width: "100%",
       }}>
         <Slider {...settingsSlider}>
@@ -90,8 +92,8 @@ export default function Testimonials() {
               xs={12}
               sm={6}
               md={4}
+              margin={3}
               key={index}
-              sx={{ display: "flex" }}
             >
               <Card
                 sx={{
@@ -99,11 +101,16 @@ export default function Testimonials() {
                   flexDirection: "column",
                   justifyContent: "space-between",
                   flexGrow: 1,
-                  p: "2em",
-                  maxWidth: "600px"
+                  p: {xs: 0, sm: 0, md: "2em"},
+                  marginInline: "2rem",
+                  width: "auto",
                 }}
               >
-                <CardContent>
+                <CardContent sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}>
                   <Typography
                     variant="body2"
                     color="text.secondary"
@@ -113,9 +120,27 @@ export default function Testimonials() {
                       fontSize: 18,
                       fontWeight: 400,
                       letterSpacing: "-0.02em",
+                      position: "relative",
+                      p: "2.2rem",
                     }}
                   >
+                    <FormatQuoteRoundedIcon sx={{
+                      transform: "rotate(180deg)", 
+                      fontSize: "6rem",
+                      position: "absolute",
+                      left: "-1.5rem",
+                      top: "-2rem",
+                      opacity: .6
+                    }} />
                     {testimonial.testimonial}
+                    <FormatQuoteRoundedIcon sx={{
+                      fontSize: "6rem",
+                      position: "absolute",
+                      right: "-1.5rem",
+                      bottom: "-3.5rem",
+                      opacity: .6
+                    }} />
+
                   </Typography>
                 </CardContent>
                 <Box

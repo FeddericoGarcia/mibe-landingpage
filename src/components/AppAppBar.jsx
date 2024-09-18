@@ -1,20 +1,19 @@
 import * as React from "react";
 import PropTypes from "prop-types";
 
-import Box from "@mui/material/Box";
-import AppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
-import Button from "@mui/material/Button";
-import Container from "@mui/material/Container";
-import Divider from "@mui/material/Divider";
-import Typography from "@mui/material/Typography";
-import MenuItem from "@mui/material/MenuItem";
-import Drawer from "@mui/material/Drawer";
+import {
+  Box,
+  AppBar,
+  Button,
+  Container,
+  Drawer,
+  MenuItem,
+  Toolbar,
+  Typography
+} from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import ToggleColorMode from "./ToggleColorMode";
-import SelfImprovementIcon from "@mui/icons-material/SelfImprovement";
 
-//TODO: ENLAZAR LAS URL DE LAS SECTION-ID CUANDO SE TERMINEN
+import ToggleColorMode from "./ToggleColorMode";
 
 const logoStyle = {
   width: "250px",
@@ -22,7 +21,7 @@ const logoStyle = {
   cursor: "pointer",
   display: "flex",
   alignItems: "center",
-  justifyContent: "center",
+  justifyContent: "space-evenly",
   flex: "no-wrap",
   WebkitUserSelect: "none",
   MozUserSelect: "none",
@@ -36,6 +35,10 @@ function AppAppBar({ mode, toggleColorMode }) {
   const toggleDrawer = (newOpen) => () => {
     setOpen(newOpen);
   };
+
+  const fetchImg = mode === "light"
+    ? `https://res.cloudinary.com/dipoe9wir/image/upload/v1726613145/MB-Logo-2_ee9aa8.png`
+    : `https://res.cloudinary.com/dipoe9wir/image/upload/v1726613145/MB-Logo-1_npgizo.png`
 
   const scrollToSection = (sectionId) => {
     const sectionElement = document.getElementById(sectionId);
@@ -86,15 +89,12 @@ function AppAppBar({ mode, toggleColorMode }) {
             })}
           >
             <Box style={logoStyle} onClick={() => scrollToSection("hero")}>
-              <SelfImprovementIcon
-                sx={{
-                  fontSize: "40px",
-                  mr: 2,
-                  color: "text.primary"
-                    ? "text.primary"
-                    : "text.secondary.dark",
-                }}
-              />
+              <img
+                src={fetchImg}
+                alt="logo"
+                width={48}
+                height={"auto"}
+              ></img>
               <Typography
                 variant="h6"
                 color="text.primary"
@@ -122,7 +122,6 @@ function AppAppBar({ mode, toggleColorMode }) {
                   <Typography
                     variant="body2"
                     color="text.primary"
-                    id="typograMontserrat"
                   >
                     Tai-chi
                   </Typography>
@@ -134,21 +133,8 @@ function AppAppBar({ mode, toggleColorMode }) {
                   <Typography
                     variant="body2"
                     color="text.primary"
-                    id="typograMontserrat"
                   >
                     Chi-kung
-                  </Typography>
-                </MenuItem>
-                <MenuItem
-                  onClick={() => scrollToSection("testimonials")}
-                  sx={{ py: "6px", px: "12px" }}
-                >
-                  <Typography
-                    variant="body2"
-                    color="text.primary"
-                    id="typograMontserrat"
-                  >
-                    Testimonios
                   </Typography>
                 </MenuItem>
                 <MenuItem
@@ -158,9 +144,19 @@ function AppAppBar({ mode, toggleColorMode }) {
                   <Typography
                     variant="body2"
                     color="text.primary"
-                    id="typograMontserrat"
                   >
                     ¿Quien soy?
+                  </Typography>
+                </MenuItem>
+                <MenuItem
+                  onClick={() => scrollToSection("testimonials")}
+                  sx={{ py: "6px", px: "12px" }}
+                >
+                  <Typography
+                    variant="body2"
+                    color="text.primary"
+                  >
+                    Testimonios
                   </Typography>
                 </MenuItem>
                 <MenuItem
@@ -170,7 +166,6 @@ function AppAppBar({ mode, toggleColorMode }) {
                   <Typography
                     variant="body2"
                     color="text.primary"
-                    id="typograMontserrat"
                   >
                     Contáctame
                   </Typography>
@@ -199,9 +194,14 @@ function AppAppBar({ mode, toggleColorMode }) {
               <Drawer anchor="right" open={open} onClose={toggleDrawer(false)}>
                 <Box
                   sx={{
-                    minWidth: "60dvw",
+                    minWidth: "40dvw",
                     p: 2,
-                    backgroundColor: "background.paper",
+                    bgcolor: "transparent",
+                    // (theme) => (
+                    //   theme.palette.mode === "ligth"
+                    //     ? "rgba(0, 0, 0, 0.4)"
+                    //     : "rgba(0, 0, 0, 0.4)"
+                    // ),
                     flexGrow: 1,
                   }}
                 >
@@ -218,34 +218,29 @@ function AppAppBar({ mode, toggleColorMode }) {
                       toggleColorMode={toggleColorMode}
                     />
                   </Box>
-                  <Divider />
+                  {/* <Divider /> */}
                   <MenuItem
                     onClick={() => scrollToSection("taichi")}
-                    id="typograMontserrat"
                   >
                     Tai-chi
                   </MenuItem>
                   <MenuItem
                     onClick={() => scrollToSection("chikung")}
-                    id="typograMontserrat"
                   >
                     Chi-kung
                   </MenuItem>
                   <MenuItem
-                    onClick={() => scrollToSection("testimonials")}
-                    id="typograMontserrat"
-                  >
-                    Testimonios
-                  </MenuItem>
-                  <MenuItem
                     onClick={() => scrollToSection("quien-soy")}
-                    id="typograMontserrat"
                   >
                     ¿Quien soy?
                   </MenuItem>
                   <MenuItem
+                    onClick={() => scrollToSection("testimonials")}
+                  >
+                    Testimonios
+                  </MenuItem>
+                  <MenuItem
                     onClick={() => scrollToSection("contacto")}
-                    id="typograMontserrat"
                   >
                     Contáctame
                   </MenuItem>

@@ -21,12 +21,11 @@ export default function Contact() {
         flexDirection: "column",
         alignItems: "center",
         gap: { xs: 3, sm: 6 },
-        mt: "7em",
+        mb: { xs: 4, sm: 6, md: 8 },
       }}
     >
       <Box
         sx={{
-          width: { xs: "75%", sm: "80%" },
           textAlign: "center",
           pb: "1em",
         }}
@@ -66,8 +65,24 @@ export default function Contact() {
                 theme.palette.mode === "light"
                   ? `0 0 12px 8px ${alpha("#1F7A1F", 0.2)}`
                   : `0 0 24px 12px ${alpha("#1F7A1F", 0.2)}`,
-            }}
-          >
+              position: "relative"
+            }}>
+              <Box sx={{
+                backgroundImage: (theme) =>
+                  theme.palette.mode === "light"
+                    ? `url(https://res.cloudinary.com/dipoe9wir/image/upload/v1726613145/MB-Logo-2_ee9aa8.png)`
+                    : `url(https://res.cloudinary.com/dipoe9wir/image/upload/v1726613145/MB-Logo-1_npgizo.png)`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                opacity: .1,
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+                zIndex: 0,
+              }}></Box>
             <CardContent>
               <Box
                 component="form"
@@ -79,6 +94,7 @@ export default function Contact() {
                   alignItems: "center",
                   color: "grey.100",
                   gap: 2.5,
+                  zIndex: 1,
                   "& > :not(style)": { m: 1 },
                 }}
                 noValidate
@@ -114,7 +130,14 @@ export default function Contact() {
                 href="#"
                 target="__blank"
                 sx={{
-                  letterSpacing: ".2em",
+                  fontFamily: "Montserrat",
+                  letterSpacing: ".1em",
+                  fontWeight: 600,
+                  transition: "background 400ms ease-out",
+                  '&:hover': {
+                    backgroundImage: "linear-gradient(to bottom, #136C13, #51BC51)",
+                    boxShadow: "0 0 1px rgba(81, 188, 81, 0.7), 1px 1.5px 2px -1px rgba(81, 188, 81, 0.65), 4px 4px 12px -2.5px rgba(81, 188, 81, 015)"
+                  }
                 }}
               >
                 {"Enviar".toUpperCase()}

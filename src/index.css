@@ -7,7 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.MuiTypography-root, .MuiBox-root, .MuiFormLabel-root, .MuiInputBase-input{
+.MuiTypography-root, .MuiMenuItem-root, .MuiBox-root, .MuiFormLabel-root, .MuiInputBase-input{
   font-family: "Montserrat", sans-serif!important;
   font-optical-sizing: auto;
 }
