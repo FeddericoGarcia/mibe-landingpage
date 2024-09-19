@@ -1,21 +1,52 @@
 import * as React from "react";
-import Box from "@mui/material/Box";
-import Container from "@mui/material/Container";
-import Stack from "@mui/material/Stack";
-import Typography from "@mui/material/Typography";
-import Divider from "@mui/material/Divider";
+import {
+  Box,
+  Container,
+  Stack,
+  Typography,
+} from "@mui/material";
 
 import SportsMartialArtsRoundedIcon from "@mui/icons-material/SportsMartialArtsRounded";
 import SportsGymnasticsRoundedIcon from "@mui/icons-material/SportsGymnasticsRounded";
 
+import SecondaryButton from "./SecondaryButton"
+
+const styleIcon = {
+  color: (theme) =>
+    theme.palette.mode === "light"
+      ? "primary.main"
+      : "primary.light",
+  fontSize: { xs: "10rem", sm: "14rem", md: "18rem", lg: "20rem" },
+  filter: (theme) =>
+    theme.palette.mode === "light"
+      ? "drop-shadow(10px 5px 5px #0009)"
+      : "drop-shadow(10px 5px 5px #CCC9)",
+}
+
 export default function Description() {
   return (
-    <Box pb={"4em"}>
-      <Container maxWidth="md">
-        <Stack spacing={12}>
+    <Container maxWidth="md" sx={{ mb: "5rem" }}>
+      <Stack spacing={12}>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: { xs: "column-reverse", sm: "column", md: "row" },
+            justifyContent: "center",
+          }}
+        >
+          <Box
+            sx={{
+              width: "100%",
+              heigth: "auto",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <SportsMartialArtsRoundedIcon sx={styleIcon} />
+          </Box>
           <Box
             id="taichi"
-            minHeight={370}
             sx={{
               display: "flex",
               flexDirection: "column",
@@ -24,7 +55,6 @@ export default function Description() {
               textAlign: "left",
               position: "relative",
               p: { xs: 2, sm: 6, md: 8 },
-              marginBottom: { xs: "25em", sm: 15, md: 100 },
             }}
           >
             <Typography
@@ -57,109 +87,74 @@ export default function Description() {
               reducir el estrés, lo que lo convierte en una práctica popular
               para la salud y el bienestar general.
             </Typography>
-            {/* <SportsMartialArtsRoundedIcon sx={{
-                    position: 'absolute',
-                    right: 0,
-                    top: 70,
-                    color: (theme) =>
-                        theme.palette.mode === 'light' ? 'primary.main' : 'primary.light',
-                    fontSize: {xs:'12em', sm:'19em', md:'22em', lg:'25em'},
-                    filter: (theme) =>
-                            theme.palette.mode === 'light' ? "drop-shadow(10px 5px 5px #0009)" : "drop-shadow(10px 5px 5px #CCC9)",
-                    mb: 3,
-                    mt: {xs:20, sm:15, md: 3},
-                    mr: {xs:0, sm:-3, md: 3},
-                }}/> */}
+            <SecondaryButton href="www.example.com" title="Conocé más sobre TaiChi" />
+          </Box>
+        </Box>
+
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: { xs: "column", sm: "column", md: "row" },
+            justifyContent: "center",
+          }}
+        >
+          <Box
+            id="chikung"
+            sx={{
+              width: "auto",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "flex-end",
+              textAlign: "right",
+              position: "relative",
+              p: { xs: 2, sm: 6, md: 8 },
+            }}
+          >
+            <Typography
+              className="typograhyPlaywrite"
+              component="h2"
+              variant="h2"
+              mb="2rem"
+              sx={{
+                color: (theme) =>
+                  theme.palette.mode === "light"
+                    ? "primary.main"
+                    : "primary.light",
+              }}
+            >
+              Chi Kung
+            </Typography>
+            <Typography
+              variant="body1"
+              fontSize="1rem"
+              sx={{
+                mb: 3,
+                zIndex: 1,
+              }}
+            >
+              También conocido como <b>Qigong</b>, es un sistema chino de
+              ejercicios de meditación, respiración y movimientos. Es una
+              práctica que implica la coordinación de diferentes patrones de
+              respiración con posturas y movimientos físicos para potenciar y
+              equilibrar el flujo de Chi (<i>energía vital</i>) en el cuerpo,
+              promoviendo la salud, la tranquilidad y la longevidad.
+            </Typography>
+            <SecondaryButton href="www.example.com" title="Conocé más sobre ChiKung" />
           </Box>
           <Box
             sx={{
+              width: "100%",
+              heigth: "auto",
               display: "flex",
-              flexDirection: "row",
               justifyContent: "center",
-              flexWrap: "wrap",
-              gap: { xs: 3, sm: 6 },
+              alignItems: "center",
             }}
           >
-            <Box
-              id="chikung"
-              sx={{
-                width: "auto",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
-                alignItems: "flex-end",
-                textAlign: "right",
-                position: "relative",
-                p: { xs: 2, sm: 6, md: 8 },
-              }}
-            >
-              <Typography
-                className="typograhyPlaywrite"
-                component="h2"
-                variant="h2"
-                mb="2rem"
-                sx={{
-                  color: (theme) =>
-                    theme.palette.mode === "light"
-                      ? "primary.main"
-                      : "primary.light",
-                }}
-              >
-                Chi Kung
-              </Typography>
-              <Typography
-                variant="body1"
-                fontSize="1rem"
-                sx={{
-                  mb: 5,
-                  zIndex: 1,
-                }}
-              >
-                También conocido como <b>Qigong</b>, es un sistema chino de
-                ejercicios de meditación, respiración y movimientos. Es una
-                práctica que implica la coordinación de diferentes patrones de
-                respiración con posturas y movimientos físicos para potenciar y
-                equilibrar el flujo de Chi (<i>energía vital</i>) en el cuerpo,
-                promoviendo la salud, la tranquilidad y la longevidad.
-              </Typography>
-            </Box>
-            <Box
-              sx={{
-                // width: "50%",
-                display: "flex",
-                // flexDirection: "column",
-                justifyContent: "center",
-                alignItems: "center",
-                // textAlign: "left",
-                // position: "relative",
-                // p: { xs: 8, sm: 10, md: 12 },
-                // mb: { xs: "25em", sm: 15, md: 100 },
-              }}
-            >
-              {/* <SportsGymnasticsRoundedIcon
-                sx={{
-                  // position: 'absolute',
-                  // left: 0,
-                  // top: 70,
-                  color: (theme) =>
-                    theme.palette.mode === "light"
-                      ? "primary.main"
-                      : "primary.light",
-                  fontSize: { xs: "12em", sm: "19em", md: "22em", lg: "25em" },
-                  filter: (theme) =>
-                    theme.palette.mode === "light"
-                      ? "drop-shadow(10px 5px 5px #0009)"
-                      : "drop-shadow(10px 5px 5px #CCC9)",
-                  // mb: 3,
-                  // mt: {xs:20, sm:15, md: 3},
-                  // ml: {xs:0, sm:-2, md: 3},
-                }}
-              /> */}
-            </Box>
+            <SportsGymnasticsRoundedIcon sx={styleIcon} />
           </Box>
-          <Divider />
-        </Stack>
-      </Container>
-    </Box>
+        </Box>
+      </Stack>
+    </Container>
   );
 }

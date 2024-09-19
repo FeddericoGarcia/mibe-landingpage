@@ -11,7 +11,18 @@ import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
 import { alpha } from "@mui/material";
 
-export default function Contact() {
+
+export default function Contact({ mode }) {
+
+  const styleInput = {
+    backgroundColor: mode === "light"
+      ? "rgba(255, 255, 255, 0.4)"
+      : "rgba(0, 0, 0, 0.4)",
+    webkitBackdropFilter: " blur(24px)",
+    backdropFilter: "blur(24px)",
+    borderRadius: "12px"
+  }
+
   return (
     <Container
       id="contacto"
@@ -47,7 +58,6 @@ export default function Contact() {
           asesorarte sobre mis cursos
         </Typography>
       </Box>
-
       <Grid container spacing={3} alignItems="center" justifyContent="center">
         <Grid item xs={12} sm={8} md={5}>
           <Card
@@ -67,22 +77,22 @@ export default function Contact() {
                   : `0 0 24px 12px ${alpha("#1F7A1F", 0.2)}`,
               position: "relative"
             }}>
-              <Box sx={{
-                backgroundImage: (theme) =>
-                  theme.palette.mode === "light"
-                    ? `url(https://res.cloudinary.com/dipoe9wir/image/upload/v1726613145/MB-Logo-2_ee9aa8.png)`
-                    : `url(https://res.cloudinary.com/dipoe9wir/image/upload/v1726613145/MB-Logo-1_npgizo.png)`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-                opacity: .1,
-                position: "absolute",
-                top: 0,
-                left: 0,
-                width: "100%",
-                height: "100%",
-                zIndex: 0,
-              }}></Box>
+            <Box sx={{
+              backgroundImage: (theme) =>
+                theme.palette.mode === "light"
+                  ? `url(https://res.cloudinary.com/dipoe9wir/image/upload/v1726613145/MB-Logo-2_ee9aa8.png)`
+                  : `url(https://res.cloudinary.com/dipoe9wir/image/upload/v1726613145/MB-Logo-1_npgizo.png)`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              opacity: .1,
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              zIndex: 0,
+            }}></Box>
             <CardContent>
               <Box
                 component="form"
@@ -106,17 +116,24 @@ export default function Contact() {
                   id="name"
                   label="Nombre completo"
                   variant="outlined"
+                  sx={styleInput}
                 />
-                <TextField id="telephone" label="Teléfono" variant="outlined" />
+                <TextField
+                  id="telephone"
+                  label="Teléfono"
+                  variant="outlined"
+                  sx={styleInput} />
                 <TextField
                   id="email"
                   label="Correo electrónico"
                   variant="outlined"
+                  sx={styleInput}
                 />
                 <TextField
                   id="text"
                   placeholder="Hola, quisiera más información sobre tus clases..."
                   variant="outlined"
+                  sx={styleInput}
                   multiline
                   rows={4}
                 />

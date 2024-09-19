@@ -1,29 +1,27 @@
 import * as React from 'react';
-import { alpha } from '@mui/material';
+import { alpha, Button } from '@mui/material';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
+import { scrollToSection } from '../helpers/scrollToSection';
 
-//TODO: TERMINAR FOTO HERO SEGUN TEMA
 
-// const fetchImg = ( theme ) =>{
-//   if(theme.palette.mode === 'light') {
-//     'url("https://res.cloudinary.com/dipoe9wir/image/upload/v1726269701/personas-taichi-ocaso_xctl7z.webp")'
-//   } else { 
-//     'url("https://res.cloudinary.com/dipoe9wir/image/upload/v1726269701/personas-taichi-bosque_kbkzcu.webp")'
-//   }
-// }
+export default function Hero({ mode }) {
 
-export default function Hero() {
+  const fetchImg = mode === "light"
+    ? `url("https://res.cloudinary.com/dipoe9wir/image/upload/v1726269701/personas-taichi-ocaso_xctl7z.webp")`
+    : `https://res.cloudinary.com/dipoe9wir/image/upload/v1726269701/personas-taichi-bosque_kbkzcu.webp`
+
+
   return (
     <Box
       id="hero"
-      sx={(theme) => ({
+      sx={() => ({
         width: '100%',
         height: 'auto',
         backgroundImage:
-          theme.palette.mode === 'light'
+          mode === 'light'
             ? 'linear-gradient(180deg, #CEE5FD, #FFF)'
             : `linear-gradient(#02294F, ${alpha('#090E10', 0.0)})`,
         backgroundSize: '100% 20%',
@@ -33,32 +31,38 @@ export default function Hero() {
       <Container
         sx={{
           display: 'flex',
-          flexDirection: 'column',
+          flexDirection: { xs: "column", sm: "column", md: 'row' },
           alignItems: 'center',
-          pt: { xs: 14, sm: 20 },
+          p: { xs: 8, sm: 6, md: 4 },
+          pt: { xs: 14, sm: 10, md: 4 },
           pb: { xs: 8, sm: 12 },
         }}
       >
-        <Stack spacing={1} useFlexGap sx={{ width: { xs: '100%', sm: '70%' } }}>
+        <Stack spacing={1} useFlexGap sx={{
+          alignItems: "center",
+          zIndex: 1,
+          width: {
+            xs: '100%',
+            sm: '100%',
+          }
+        }}>
           <Typography
             variant="h1"
             sx={{
               display: 'flex',
-              flexDirection: {xs: 'column', sm: 'column', md: 'column', lg: 'row'},
+              flexDirection: { xs: 'column', sm: 'column', md: 'column', lg: 'row' },
               alignSelf: 'center',
               textAlign: 'center',
               fontSize: 'clamp(3rem, 10vw, 4rem)',
-              width: "110%",
+              width: "100%",
             }}
           >
             <Typography
               component="span"
               variant="h1"
               sx={{
-                
                 fontSize: 'clamp(3rem, 10vw, 4rem)',
-                color: (theme) =>
-                  theme.palette.mode === 'light' ? 'primary.main' : 'primary.light',
+                color: mode === 'light' ? 'primary.main' : 'primary.light',
               }}
             >
               Armoniza&nbsp;
@@ -69,26 +73,24 @@ export default function Hero() {
             textAlign="center"
             color="text.secondary"
             variant="subtitle1"
-            sx={{ alignSelf: 'center', width: { sm: '100%', md: '80%' } }}
+            sx={{ alignSelf: 'center', width: '100%'}}
           >
-            Encuentra tu&nbsp;
+            Con mis cursos encontrarás tu&nbsp;
             <Typography
               component="span"
               variant="subtitle1"
               sx={{
-                color: (theme) =>
-                  theme.palette.mode === 'light' ? 'primary.main' : 'primary.light',
+                color: mode === 'light' ? 'primary.main' : 'primary.light',
               }}
             >
               equilibrio interior&nbsp;
             </Typography>
-            y conecta con&nbsp;
+            y conectarás con&nbsp;
             <Typography
               component="span"
               variant="subtitle1"
               sx={{
-                color: (theme) =>
-                  theme.palette.mode === 'light' ? 'primary.main' : 'primary.light',
+                color: mode === 'light' ? 'primary.main' : 'primary.light',
               }}
             >
               la paz
@@ -96,19 +98,27 @@ export default function Hero() {
             <Typography
               variant="subtitle1"
               fontWeight={600}
-              >
+            >
               Prof. Miriam Bengolea
             </Typography>
           </Typography>
+          <Button onClick={() => scrollToSection("contacto")} sx={{
+            width: 300,
+          }}>
+            Obtén más información
+            <Box ml={1} component="span" sx={{ fontWeight: 600 }}>
+              &gt;
+            </Box>
+          </Button>
         </Stack>
         <Box
           id="image"
-          sx={(theme) => ({
+          sx={() => ({
             mt: { xs: 8, sm: 10 },
             alignSelf: 'center',
             height: { xs: 200, sm: 700 },
             width: '100%',
-            background: 'url("https://res.cloudinary.com/dipoe9wir/image/upload/v1726269701/personas-taichi-ocaso_xctl7z.webp")',
+            backgroundImage: { fetchImg },
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
@@ -117,11 +127,11 @@ export default function Hero() {
             borderRadius: '10px',
             outline: '1px solid',
             outlineColor:
-              theme.palette.mode === 'light'
+              mode === 'light'
                 ? alpha('#BFCCD9', 0.5)
                 : alpha('#9CCCFC', 0.1),
             boxShadow:
-              theme.palette.mode === 'light'
+              mode === 'light'
                 ? `0 0 12px 8px ${alpha('#9CCCFC', 0.2)}`
                 : `0 0 24px 12px ${alpha('#033363', 0.2)}`,
           })}

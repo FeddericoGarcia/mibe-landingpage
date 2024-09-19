@@ -26,67 +26,78 @@ function copyright() {
   );
 }
 
-export default function Footer() {
+export default function Footer({ mode }) {
   return (
-    <Container
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        gap: { xs: 4, sm: 8 },
-        py: { xs: 8, sm: 10 },
-        textAlign: { sm: "center", md: "left" },
-      }}
-    >
-      <Box
-        sx={{
+    <Box sx={() => ({
+      width: '100%',
+      height: 'auto',
+      // backgroundImage:
+      //   mode === 'dark'
+      //     ? 'linear-gradient(360deg, #136C13, transparent)'
+      //     : `linear-gradient(360deg, #51BC51, transparent)`,
+      // backgroundSize: '100% 135%',
+      // backgroundRepeat: 'no-repeat',
+    })}>
+      <Container
+        sx={() => ({
           display: "flex",
-          justifyContent: "space-between",
-          pt: { xs: 4, sm: 8 },
-          width: "100%",
-          borderTop: "1px solid",
-          borderColor: "divider",
-        }}
+          flexDirection: "column",
+          alignItems: "center",
+          gap: { xs: 4, sm: 8 },
+          py: { xs: 8, sm: 10 },
+          textAlign: { sm: "center", md: "left" },
+        })}
       >
-        {copyright()}
-        <Stack
-          direction="row"
-          justifyContent="left"
-          spacing={1}
-          useFlexGap
+        <Box
           sx={{
-            color: "text.secondary",
+            display: "flex",
+            justifyContent: "space-between",
+            pt: { xs: 4, sm: 8 },
+            width: "100%",
+            borderTop: "1px solid",
+            borderColor: "divider",
           }}
         >
-          <IconButton
-            color="inherit"
-            href="https://api.whatsapp.com/send?phone=5493513002576&text=¡Hola!%20Podr%C3%ADas%20darme%20m%C3%A1s%20informaci%C3%B3n%20sobre%20las%20clases%20de%20taichi? "
-            aria-label="Whatsapp"
-            target="__blank"
-            sx={{ alignSelf: "center" }}
+          {copyright()}
+          <Stack
+            direction="row"
+            justifyContent="left"
+            spacing={1}
+            useFlexGap
+            sx={{
+              color: "text.secondary",
+            }}
           >
-            <WhatsAppIcon />
-          </IconButton>
-          <IconButton
-            color="inherit"
-            href="https://www.facebook.com/miriam.bengolea.39"
-            aria-label="Facebook"
-            target="__blank"
-            sx={{ alignSelf: "center" }}
-          >
-            <FacebookIcon />
-          </IconButton>
-          <IconButton
-            color="inherit"
-            href="https://www.instagram.com/bengoleamiriam/"
-            aria-label="Instagram"
-            target="__blank"
-            sx={{ alignSelf: "center" }}
-          >
-            <InstagramIcon />
-          </IconButton>
-        </Stack>
-      </Box>
-    </Container>
+            <IconButton
+              color="inherit"
+              href="https://api.whatsapp.com/send?phone=5493513002576&text=¡Hola!%20Podr%C3%ADas%20darme%20m%C3%A1s%20informaci%C3%B3n%20sobre%20las%20clases%20de%20taichi? "
+              aria-label="Whatsapp"
+              target="__blank"
+              sx={{ alignSelf: "center" }}
+            >
+              <WhatsAppIcon />
+            </IconButton>
+            <IconButton
+              color="inherit"
+              href="https://www.facebook.com/miriam.bengolea.39"
+              aria-label="Facebook"
+              target="__blank"
+              sx={{ alignSelf: "center" }}
+            >
+              <FacebookIcon />
+            </IconButton>
+            <IconButton
+              color="inherit"
+              href="https://www.instagram.com/bengoleamiriam/"
+              aria-label="Instagram"
+              target="__blank"
+              sx={{ alignSelf: "center" }}
+            >
+              <InstagramIcon />
+            </IconButton>
+          </Stack>
+        </Box>
+      </Container>
+    </Box>
   );
 }

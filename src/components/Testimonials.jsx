@@ -58,7 +58,7 @@ export default function Testimonials() {
         heigth: "auto",
         width: "auto",
         overflow: "hidden",
-        mb: { xs: 4, sm: 6, md: 8 },
+        mb: { xs: 4, sm: 6, md: 12 },
       }}
     >
       <Box
@@ -101,7 +101,7 @@ export default function Testimonials() {
                   flexDirection: "column",
                   justifyContent: "space-between",
                   flexGrow: 1,
-                  p: {xs: 0, sm: 0, md: "2em"},
+                  p: { xs: 0, sm: 0, md: "2em" },
                   marginInline: "2rem",
                   width: "auto",
                 }}
@@ -125,7 +125,7 @@ export default function Testimonials() {
                     }}
                   >
                     <FormatQuoteRoundedIcon sx={{
-                      transform: "rotate(180deg)", 
+                      transform: "rotate(180deg)",
                       fontSize: "6rem",
                       position: "absolute",
                       left: "-1.5rem",

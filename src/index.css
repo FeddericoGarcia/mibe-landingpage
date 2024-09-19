@@ -7,7 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.MuiTypography-root, .MuiMenuItem-root, .MuiBox-root, .MuiFormLabel-root, .MuiInputBase-input{
+.MuiTypography-root, .MuiMenuItem-root, .MuiBox-root, .MuiFormLabel-root, .MuiInputBase-input, .MuiButton-text{
   font-family: "Montserrat", sans-serif!important;
   font-optical-sizing: auto;
 }
@@ -17,4 +17,10 @@ body {
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
+}
+
+@keyframes adj-navbar {
+  100% { 
+    transform: translateY(-22px); 
+  }
 }
