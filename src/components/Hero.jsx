@@ -53,7 +53,7 @@ export default function Hero({ mode }) {
               flexDirection: { xs: 'column', sm: 'column', md: 'column', lg: 'row' },
               alignSelf: 'center',
               textAlign: 'center',
-              fontSize: 'clamp(3rem, 10vw, 4rem)',
+              fontSize: 'clamp(3rem, 2.0vw, 4rem)',
               width: "100%",
             }}
           >
@@ -61,7 +61,7 @@ export default function Hero({ mode }) {
               component="span"
               variant="h1"
               sx={{
-                fontSize: 'clamp(3rem, 10vw, 4rem)',
+                fontSize: 'clamp(3rem, 2.0vw, 4rem)',
                 color: mode === 'light' ? 'primary.main' : 'primary.light',
               }}
             >
@@ -114,7 +114,7 @@ export default function Hero({ mode }) {
         <Box
           id="image"
           sx={() => ({
-            mt: { xs: 8, sm: 10 },
+            mt: { xs: 3, sm: 5 },
             alignSelf: 'center',
             height: { xs: 200, sm: 700 },
             width: '100%',
