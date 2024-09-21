@@ -12,11 +12,12 @@ import SportsGymnasticsRoundedIcon from "@mui/icons-material/SportsGymnasticsRou
 import SecondaryButton from "./SecondaryButton"
 
 const styleIcon = {
+  // m: { xs: 4, sm: 6, md: 8 },
   color: (theme) =>
     theme.palette.mode === "light"
       ? "primary.main"
       : "primary.light",
-  fontSize: { xs: "10rem", sm: "14rem", md: "18rem", lg: "20rem" },
+  fontSize: { xs: "14rem", sm: "14rem", md: "18rem", lg: "20rem" },
   filter: (theme) =>
     theme.palette.mode === "light"
       ? "drop-shadow(10px 5px 5px #0009)"
@@ -25,7 +26,7 @@ const styleIcon = {
 
 export default function Description() {
   return (
-    <Container maxWidth="md" sx={{ mb: "5rem" }}>
+    <Container maxWidth="md" heigth="100vh" sx={{ mb: "5rem" }}>
       <Stack spacing={12}>
         <Box
           sx={{
@@ -82,12 +83,12 @@ export default function Description() {
             >
               Es un arte marcial chino conocido por sus movimientos lentos y
               elegantes que promueven la serenidad, la concentración y la paz
-              interior. Es una forma de ejercicio que mejora el equilibrio, la
+              interior, también llamado <b>Taichi Chuan</b>. Es una forma de ejercicio que mejora el equilibrio, la
               flexibilidad y la fuerza muscular, también tiene beneficios para
               reducir el estrés, lo que lo convierte en una práctica popular
               para la salud y el bienestar general.
             </Typography>
-            <SecondaryButton href="www.example.com" title="Conocé más sobre TaiChi" />
+            <SecondaryButton href="https://es.wikipedia.org/wiki/Taich%C3%AD" title="Conocé más sobre Tai chi" />
           </Box>
         </Box>
 
@@ -140,7 +141,7 @@ export default function Description() {
               equilibrar el flujo de Chi (<i>energía vital</i>) en el cuerpo,
               promoviendo la salud, la tranquilidad y la longevidad.
             </Typography>
-            <SecondaryButton href="www.example.com" title="Conocé más sobre ChiKung" />
+            <SecondaryButton href="https://es.wikipedia.org/wiki/Chi_kung" title="Conocé más sobre Chi kung" />
           </Box>
           <Box
             sx={{

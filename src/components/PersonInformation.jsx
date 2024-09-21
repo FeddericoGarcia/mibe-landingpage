@@ -46,7 +46,7 @@ export default function PersonInformation() {
               Me llamo <b>Miriam Bengolea</b>, soy docente con más de 30 años compartiendo conocimiento, actualmente me dedico a enseñar estas bellas artes marciales.
               Como profesora de Tai Chi y Chi Kung (Qigong), me dedico a ayudar a las personas a encontrar la paz interior, el equilibrio y la armonía a través de estas antiguas prácticas chinas.
               Me enorgullece decir que mis enseñanzas han transformado positivamente la vida de muchas personas, mejorando su equilibrio emocional, flexibilidad y bienestar general de salud.
-              Mis crusos son orientados a cualquier persona y edad, suelo brindarlos en espacios abiertos para que toda persona interesada pueda apreciar lo hermoso y delicado que son estas artes.
+              <br /> <br /> Mis cursos son orientados a cualquier persona y edad, suelo brindarlos en espacios abiertos para que toda persona interesada pueda apreciar lo hermoso y delicado que son estas artes.
               Y en otras ocasiones suelo brindar clases más personalizadas.
             </Typography>
           </Box>

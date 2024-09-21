@@ -84,7 +84,7 @@ function AppAppBar({ mode, toggleColorMode }) {
               src={fetchImg}
               alt="logo"
               width={48}
-              height={"auto"}
+              height="auto"
             ></img>
             <Typography
               variant="h6"

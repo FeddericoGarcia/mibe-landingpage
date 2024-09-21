@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { alpha, Button } from '@mui/material';
+import { Button } from '@mui/material';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Stack from '@mui/material/Stack';
@@ -9,30 +9,46 @@ import { scrollToSection } from '../helpers/scrollToSection';
 
 export default function Hero({ mode }) {
 
-  const fetchImg = mode === "light"
-    ? `url("https://res.cloudinary.com/dipoe9wir/image/upload/v1726269701/personas-taichi-ocaso_xctl7z.webp")`
+  const fetchImg = mode === "dark"
+    ? `https://res.cloudinary.com/dipoe9wir/image/upload/v1726269701/personas-taichi-ocaso_xctl7z.webp`
     : `https://res.cloudinary.com/dipoe9wir/image/upload/v1726269701/personas-taichi-bosque_kbkzcu.webp`
 
+  const styleImg = {
+    height: "auto",
+    maxHeight: "100vh",
+    width: '100%!important',
+    backgroundImage: { fetchImg },
+    backgroundSize: 'cover',
+    backgroundPosition: 'center center',
+    backgroundRepeat: 'no-repeat',
+    opacity: 0.5,
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    overflow: "hidden",
+    webkitmaskImage: "linear-gradient(to bottom, black 50%, transparent 98%)",
+    maskImage: "linear-gradient(to bottom, black 50%, transparent 98%)",
+  }
+
+  const toggleColor = mode === 'light' ? 'primary.main' : 'primary.light'
 
   return (
     <Box
       id="hero"
       sx={() => ({
         width: '100%',
-        height: 'auto',
-        backgroundImage:
-          mode === 'light'
-            ? 'linear-gradient(180deg, #CEE5FD, #FFF)'
-            : `linear-gradient(#02294F, ${alpha('#090E10', 0.0)})`,
-        backgroundSize: '100% 20%',
-        backgroundRepeat: 'no-repeat',
+        height: '100vh',
       })}
     >
       <Container
         sx={{
+          height: "100%",
           display: 'flex',
           flexDirection: { xs: "column", sm: "column", md: 'row' },
           alignItems: 'center',
+          justifyContent: "center",
+          position: "relative",
           p: { xs: 8, sm: 6, md: 4 },
           pt: { xs: 14, sm: 10, md: 4 },
           pb: { xs: 8, sm: 12 },
@@ -51,7 +67,7 @@ export default function Hero({ mode }) {
             sx={{
               display: 'flex',
               flexDirection: { xs: 'column', sm: 'column', md: 'column', lg: 'row' },
-              alignSelf: 'center',
+              justifyContent: "center",
               textAlign: 'center',
               fontSize: 'clamp(3rem, 2.0vw, 4rem)',
               width: "100%",
@@ -60,9 +76,9 @@ export default function Hero({ mode }) {
             <Typography
               component="span"
               variant="h1"
+              color={toggleColor}
               sx={{
                 fontSize: 'clamp(3rem, 2.0vw, 4rem)',
-                color: mode === 'light' ? 'primary.main' : 'primary.light',
               }}
             >
               Armoniza&nbsp;
@@ -71,17 +87,14 @@ export default function Hero({ mode }) {
           </Typography>
           <Typography
             textAlign="center"
-            color="text.secondary"
             variant="subtitle1"
-            sx={{ alignSelf: 'center', width: '100%'}}
+            sx={{ opacity: .9, textShadow: "0 0 1px #000" }}
           >
             Con mis cursos encontrarás tu&nbsp;
             <Typography
               component="span"
               variant="subtitle1"
-              sx={{
-                color: mode === 'light' ? 'primary.main' : 'primary.light',
-              }}
+              color={toggleColor}
             >
               equilibrio interior&nbsp;
             </Typography>
@@ -89,9 +102,7 @@ export default function Hero({ mode }) {
             <Typography
               component="span"
               variant="subtitle1"
-              sx={{
-                color: mode === 'light' ? 'primary.main' : 'primary.light',
-              }}
+              color={toggleColor}
             >
               la paz
             </Typography>
@@ -104,6 +115,9 @@ export default function Hero({ mode }) {
           </Typography>
           <Button onClick={() => scrollToSection("contacto")} sx={{
             width: 300,
+            mt: 5,
+            border: "1px solid #1F7A1F",
+            textShadow: "0 0 1px #0009"
           }}>
             Obtén más información
             <Box ml={1} component="span" sx={{ fontWeight: 600 }}>
@@ -111,32 +125,19 @@ export default function Hero({ mode }) {
             </Box>
           </Button>
         </Stack>
-        <Box
-          id="image"
-          sx={() => ({
-            mt: { xs: 3, sm: 5 },
-            alignSelf: 'center',
-            height: { xs: 200, sm: 700 },
-            width: '100%',
-            backgroundImage: { fetchImg },
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-            opacity: 0.8,
-            transition: 'filter 0.3s ease',
-            borderRadius: '10px',
-            outline: '1px solid',
-            outlineColor:
-              mode === 'light'
-                ? alpha('#BFCCD9', 0.5)
-                : alpha('#9CCCFC', 0.1),
-            boxShadow:
-              mode === 'light'
-                ? `0 0 12px 8px ${alpha('#9CCCFC', 0.2)}`
-                : `0 0 24px 12px ${alpha('#033363', 0.2)}`,
-          })}
-        />
       </Container>
+      <Box id="image" style={styleImg} sx={{
+        '& > img': {
+          width: { xs: "170%", sm: "120%", md: "100%" },
+          height: 'auto',
+          objectFit: 'cover',
+        }
+      }}>
+        <img
+          src={fetchImg}
+          alt="Foto de personas realizando TaiChi"
+        ></img>
+      </Box>
     </Box>
   );
 }

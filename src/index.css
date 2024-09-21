@@ -1,3 +1,8 @@
+*::selection{
+  background: #C7F7C7;
+  color: #054910
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,11 +10,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-.MuiTypography-root, .MuiMenuItem-root, .MuiBox-root, .MuiFormLabel-root, .MuiInputBase-input, .MuiButton-text{
-  font-family: "Montserrat", sans-serif!important;
-  font-optical-sizing: auto;
 }
 
 .typograhyPlaywrite{
