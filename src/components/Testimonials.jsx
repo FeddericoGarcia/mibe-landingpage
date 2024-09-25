@@ -15,25 +15,25 @@ import FormatQuoteRoundedIcon from '@mui/icons-material/FormatQuoteRounded';
 
 const userTestimonials = [
   {
-    name: "Beatriz Jimenez",
+    name: "Beatriz Salvatierra",
     occupation: "Alumna",
     testimonial:
       "¡No puedo creer cuánto ha transformado mi vida el Tai Chi! Las clases con la Prof. Miriam Bengolea son realmente inspiradoras y promueven no sólo la fuerza física, sino también la paz mental",
   },
   {
-    name: "Silvia Rivero",
+    name: "Silvia Gonzalez",
     occupation: "Alumna",
     testimonial:
       "Las clases de Tai Chi han cambiado las reglas del juego para mí. He notado mejoras en mi equilibrio, flexibilidad y bienestar general. Además, el ambiente tranquilo hace que sea fácil relajarse después de un largo día",
   },
   {
-    name: "Cindy A.",
+    name: "Andrea Montoya",
     occupation: "Alumna",
     testimonial:
       "El Tai Chi me ha ayudado a encontrar la armonía y el equilibrio interior. La orientación y la experiencia de la profesora Miriam crean una atmósfera enriquecedora, haciendo de cada clase una experiencia única y enriquecedora",
   },
   {
-    name: "Hernan Rodriguez",
+    name: "Hernan Rodriguez Basualdo",
     occupation: "Alumno",
     testimonial:
       "No puedo explicar lo bien que me ha realizado tomar las clases con la Prof. Miriam, la explicación que imparte es muy recomendada, es un cambio total para mi vida",
