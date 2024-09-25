@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useRef, useState } from "react";
 
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
@@ -11,8 +12,23 @@ import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
 import { alpha } from "@mui/material";
 
+import { sendForm } from "../helpers/sendForm";
 
 export default function Contact({ mode }) {
+  const formRef = useRef(null);
+  const [status, setStatus] = useState('');
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      await sendForm(formRef);
+      setStatus('Correo enviado con éxito!');
+    } catch (error) {
+      setStatus('Error al enviar el correo.');
+      console.error('Error al enviar el correo:', error);
+    }
+  };
 
   const styleInput = {
     backgroundColor: mode === "light"
@@ -61,6 +77,10 @@ export default function Contact({ mode }) {
       <Grid container spacing={3} alignItems="center" justifyContent="center">
         <Grid item xs={12} sm={8} md={5}>
           <Card
+            id="contact-form"
+            component="form"
+            onSubmit={handleSubmit}
+            ref={formRef}
             sx={{
               p: 2,
               display: "flex",
@@ -95,7 +115,6 @@ export default function Contact({ mode }) {
             }}></Box>
             <CardContent>
               <Box
-                component="form"
                 sx={{
                   mb: 1,
                   display: "flex",
@@ -116,36 +135,39 @@ export default function Contact({ mode }) {
                   id="name"
                   label="Nombre completo"
                   variant="outlined"
+                  required
                   sx={styleInput}
                 />
                 <TextField
                   id="telephone"
                   label="Teléfono"
                   variant="outlined"
+                  required
                   sx={styleInput} />
                 <TextField
                   id="email"
                   label="Correo electrónico"
                   variant="outlined"
+                  required
                   sx={styleInput}
                 />
                 <TextField
-                  id="text"
+                  id="message"
                   placeholder="Hola, quisiera más información sobre tus clases..."
                   variant="outlined"
+                  required
                   sx={styleInput}
                   multiline
                   rows={4}
                 />
               </Box>
             </CardContent>
+            {status && <p>{status}</p>}
             <CardActions>
               <Button
+                type="submit"
                 fullWidth
                 variant="contained"
-                component="a"
-                href="#"
-                target="__blank"
                 sx={{
                   fontFamily: "Montserrat",
                   letterSpacing: ".1em",
